@@ -25,6 +25,12 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+.section-block {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
 }
 
 img,
@@ -131,6 +137,11 @@ video {
   width: 100%;
   overflow: hidden;
   border-radius: 16px;
+  will-change: transform;
+}
+
+img {
+  image-rendering: auto;
 }
 
 .hero-slide {
@@ -385,6 +396,7 @@ video {
   border-radius: 24px;
   border: 1px solid var(--border);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  contain: layout style;
 }
 
 .pack-card:last-child {

@@ -4,7 +4,6 @@ assets/_temp*
 .DS_Store
 Thumbs.db
 *.tmp
-a1/品牌形象设计/襄韵马赵品牌手册.pdf
 node_modules/
 package.json
 package-lock.json
