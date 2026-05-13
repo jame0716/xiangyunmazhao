@@ -189,7 +189,7 @@ if (pdfCanvas && pdfPageInfo) {
   let totalPages = 0;
   let pageRendering = false;
 
-  pdfjsLib.getDocument('a1/品牌形象设计/压缩版.pdf').promise.then(function(doc) {
+  pdfjsLib.getDocument('a1/品牌形象设计/襄韵马赵品牌手册.pdf').promise.then(function(doc) {
     pdfDoc = doc;
     totalPages = doc.numPages;
     pdfPageInfo.textContent = '1 / ' + totalPages;
