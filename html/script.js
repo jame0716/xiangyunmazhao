@@ -187,7 +187,7 @@ document.addEventListener('keydown', (e) => {
   const pdfPrev = document.getElementById('pdfPrev');
   const pdfNext = document.getElementById('pdfNext');
   const pdfFallback = document.getElementById('pdfFallback');
-  const pdfUrl = 'a1/品牌形象设计/襄韵马赵品牌手册.pdf';
+  const pdfUrl = '素材/品牌形象设计/襄韵马赵品牌手册.pdf';
   const isFile = window.location.protocol === 'file:';
 
   if (isFile) {

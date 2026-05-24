@@ -1,7 +1,6 @@
 # 襄韵马赵 — 毕业设计作品 H5 展示页面
 
-> **在线访问**：https://jame0716.github.io/xiangyunmazhao  
-> **扫码访问**：见项目根目录 `website-qr.png`
+> **扫码访问**：见项目目录 `website-qr.png`
 
 ---
 
@@ -48,15 +47,15 @@
 ├── js/                 ← PDF.js 本地库（零 CDN 依赖）
 │   ├── pdf.min.js      ← PDF.js 核心库
 │   └── pdf.worker.min.js ← PDF.js 后台渲染线程
-├── a1/                 ← 资源文件夹（图片/视频/PDF）
-│   ├── 海报1~3.jpg     ← 广告海报图
-│   ├── 动态海报1~3.mp4 ← 动态海报视频
+├── 素材/                 ← 资源文件夹（图片/视频/PDF）
+│   ├── 海报/           ← 静态海报图 & 动态海报视频
+│   │   ├── 海报1~3.jpg
+│   │   └── 动态1~3.mp4
 │   ├── 品牌形象设计/   ← 品牌主视觉图 & 手册 PDF
 │   ├── 平面图/         ← 包装设计 PNG 图片
 │   ├── 渲染图/         ← 产品渲染 JPG 图片
 │   ├── 文创设计/       ← 文创产品展示图
 │   └── 实物图/         ← 产品实物照片
-├── website-qr.png      ← 网站二维码
 ├── .gitignore          ← Git 忽略规则
 └── README.md           ← 本说明文档
 ```
@@ -180,10 +179,10 @@ document.getElementById('myBtn').addEventListener('click', function() {
 
     <div class="hero-visual">                   <!-- 右侧图片区 -->
       <div class="hero-carousel" id="heroCarousel">  <!-- 轮播容器，id 供 JS 获取 -->
-        <img src="a1/品牌形象设计/主视觉.png"    <!-- img 标签，src 指定图片文件路径 -->
+        <img src="素材/品牌形象设计/主视觉.png"    <!-- img 标签，src 指定图片文件路径 -->
              alt="品牌主视觉"                    <!-- alt = 图片加载失败时的替代文字 -->
              class="hero-slide active" />        <!-- active 类标记当前显示的图片 -->
-        <img src="a1/品牌形象设计/主视觉2.png"
+        <img src="素材/品牌形象设计/主视觉2.png"
              alt="品牌主视觉2"
              class="hero-slide" />               <!-- 第二张默认隐藏（没有 active 类） -->
         <button class="hero-carousel-btn"        <!-- 切换按钮 -->
@@ -234,7 +233,7 @@ document.getElementById('myBtn').addEventListener('click', function() {
     <h4>静态海报展示</h4>                       <!-- h4 = 四级标题 -->
     <div class="static-poster-row">
       <div class="static-poster-card">
-        <img src="a1/海报1.jpg" alt="油菜花"
+        <img src="素材/海报/海报1.jpg" alt="油菜花"
              loading="lazy" />                   <!-- loading=lazy = 懒加载：快滚动到才加载 -->
         <p class="static-poster-label">油菜花</p>
       </div>
@@ -246,9 +245,9 @@ document.getElementById('myBtn').addEventListener('click', function() {
   <div class="project-row">
     <div class="adv-poster-list">               <!-- 视频选择列表 -->
       <div class="poster-thumb selected"         <!-- selected 类 = 当前选中高亮 -->
-           data-video="a1/动态海报1.mp4"         <!-- data-video 自定义属性，存视频路径 -->
-           data-poster="a1/海报1.jpg">           <!-- data-poster 自定义属性，存封面路径 -->
-        <img src="a1/海报1.jpg" alt="动态海报1" loading="lazy" decoding="async" />
+           data-video="素材/海报/动态1.mp4"         <!-- data-video 自定义属性，存视频路径 -->
+           data-poster="素材/海报/海报1.jpg">           <!-- data-poster 自定义属性，存封面路径 -->
+        <img src="素材/海报/海报1.jpg" alt="动态海报1" loading="lazy" decoding="async" />
         <div><strong>海报一</strong><p>马赵村系列海报设计 01</p></div>
       </div>
       <!-- ... 海报二、三类似 ... -->
@@ -258,9 +257,9 @@ document.getElementById('myBtn').addEventListener('click', function() {
       <h4>马赵村系列海报设计</h4>
       <video id="adVideo" class="project-video"  <!-- video = HTML5 视频播放器 -->
              controls                             <!-- 显示播放/暂停/进度条等控件 -->
-             poster="a1/海报1.jpg"                <!-- poster = 视频加载前的封面图 -->
+             poster="素材/海报/海报1.jpg"                <!-- poster = 视频加载前的封面图 -->
              preload="none">                      <!-- preload=none = 不预加载，节省流量 -->
-        <source src="a1/动态海报1.mp4"           <!-- source 指定视频文件 -->
+        <source src="素材/海报/动态1.mp4"           <!-- source 指定视频文件 -->
                 type="video/mp4" />              <!-- type 指定视频格式 -->
         您的浏览器不支持动态海报播放。             <!-- 浏览器不支持 video 标签时显示 -->
       </video>
@@ -280,7 +279,7 @@ document.getElementById('myBtn').addEventListener('click', function() {
     <div class="pack-card">                     <!-- 一个分支模块卡片（占 2 列） -->
       <div class="pack-preview">                <!-- 图片预览区 -->
         <div class="pack-item">                 <!-- 单个图片容器（正方形） -->
-          <img src="a1/平面图/通用瓶/黑豆.png"
+          <img src="素材/平面图/通用瓶/黑豆.png"
                alt="通用瓶 黑豆"
                loading="lazy"                   <!-- 懒加载：视口外不加载 -->
                decoding="async" />              <!-- 异步解码：不阻塞页面渲染 -->
@@ -301,7 +300,7 @@ document.getElementById('myBtn').addEventListener('click', function() {
 
 ### 第 228-270 行：文创设计
 
-结构与包装设计完全相同，图片来自 `a1/文创设计/` 目录。27 张图片包含品牌手册页和新增产品图。
+结构与包装设计完全相同，图片来自 `素材/文创设计/` 目录。27 张图片包含品牌手册页和新增产品图。
 
 ### 第 277-283 行：Lightbox 弹窗（图片点击放大）
 
@@ -643,7 +642,7 @@ if (pdfCanvas && pdfPageInfo) {                   // 如果 PDF 查看器元素�
   pdfjsLib.GlobalWorkerOptions.workerSrc = 'js/pdf.worker.min.js';
   // 指定 worker 线程文件位置。PDF 解析在后台线程进行，不阻塞页面
 
-  pdfjsLib.getDocument('a1/品牌形象设计/襄韵马赵品牌手册.pdf').promise
+  pdfjsLib.getDocument('素材/品牌形象设计/襄韵马赵品牌手册.pdf').promise
     .then(function(doc) {                         // PDF 加载成功后执行
       pdfDoc = doc;
       totalPages = doc.numPages;                  // 获取总页数（81 页）
@@ -861,7 +860,7 @@ node_modules/     # 忽略 npm 依赖目录
 
 ### 二维码
 
-项目根目录 `website-qr.png` 包含 GitHub Pages 网址的二维码，扫码即可在手机上打开网站。
+项目目录 `website-qr.png` 包含网站二维码，扫码即可在手机上打开网站。
 
 ---
 
