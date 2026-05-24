@@ -72,14 +72,22 @@ posterItems.forEach((item) => {
     posterItems.forEach((thumb) => thumb.classList.remove('selected'));
     item.classList.add('selected');
 
-    const sourceElement = adVideo.querySelector('source');
-    sourceElement.src = videoSrc;
     adVideo.poster = posterSrc;
+    adVideo.src = videoSrc;
     adVideo.load();
-    adVideo.play().catch(() => {
-      // Autoplay may be blocked, ignore if so.
-    });
   });
+});
+
+/* 视频就绪后自动播放 */
+adVideo.addEventListener('loadedmetadata', () => {
+  adVideo.play().catch(() => {});
+});
+
+/* 视频加载失败降级：尝试直接播放（兼容部分浏览器） */
+adVideo.addEventListener('canplay', () => {
+  if (adVideo.paused && adVideo.currentTime === 0) {
+    adVideo.play().catch(() => {});
+  }
 });
 
 window.addEventListener('scroll', setActiveLink);
